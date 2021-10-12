@@ -1,0 +1,154 @@
+/* 商品列表 */
+#shoping .left {
+    width: 914px;
+    height: 352px;
+    background-color: #fff;
+}
+
+#shoping .img {
+    width: 284px;
+    height: 284px;
+    margin-top: 35px;
+    position: relative;
+}
+
+#shoping .img .mask {
+    width: 71px;
+    height: 71px;
+    background: rgba(255, 255, 0, 0.4);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: move;
+    display: none;
+    z-index: 10;
+}
+#shoping .img .small{
+    position: relative;
+}
+
+#shoping .img .bigImg {
+    overflow: hidden;
+    width: 284px;
+    height: 284px;
+    position: absolute;
+    left: 284px;
+    z-index: 100;
+    display: none;
+}
+#shoping .bigImgMove{
+    position: absolute;
+}
+
+#shoping .text {
+    margin-top: 35px;
+    width: 534px;
+    height: 282px;
+    position: relative;
+}
+
+#shoping .top {
+    font-size: 24px;
+    color: #43240c;
+    line-height: 33px;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+#shoping .top .two {
+    width: 42px;
+    height: 24px;
+}
+
+#shoping .top .one {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+
+#shoping button {
+    width: 224px;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 25px;
+    display: block;
+    float: right;
+    background: red;
+    border-style: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#shoping .cmd-price {
+    width: 530px;
+    height: 87px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b1a9a5;
+    line-height: 22px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#shoping .original-price {
+    text-decoration: line-through;
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+#shoping .last-price {
+    font-size: 20px;
+    color: #ff4653;
+    line-height: 28px;
+    background-color: #f5f5f5;
+    margin-left: 16px;
+}
+
+#shoping .price {
+    font-size: 40px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: #fa585a;
+    line-height: 28px;
+}
+
+#shoping .coupon-info {
+    display: inline-block;
+    height: 16px;
+    background: #feeeee;
+    border-radius: 2px;
+    border: 1px solid #fa585a;
+    font-size: 12px;
+    text-align: center;
+    line-height: 17px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+#shoping .sale-num {
+    display: table-cell;
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    color: #b1a9a5;
+    line-height: 22px;
+    vertical-align: middle;
+    margin-top: 16px;
+    margin-right: 27px;
+    float: right;
+}
+#shoping .right{
+    float: right;
+    width: 275px;
+    height: 352px;
+    background: #fff;
+    border: 1px solid #fee44e;
+    font-weight: 500;
+    text-align: center;
+}

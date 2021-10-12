@@ -1,0 +1,355 @@
+/* 导航 */
+#nav {
+    height: 46px;
+    background: #43240c;
+    width: 100%;
+}
+
+#nav ul {
+    display: flex;
+}
+
+#nav li {
+    cursor: pointer;
+    width: 166px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 47px;
+    color: #fff;
+}
+
+
+
+#banner {
+    height: 369px;
+}
+
+#banner .list {
+    background-color: #fcf9e3;
+    float: left;
+    position: relative;
+    width: 220px;
+    /* height: 100px; */
+}
+
+#banner .list li {
+    text-align: center;
+    height: 41px;
+    width: 220px;
+    line-height: 41px;
+    color: #43200c;
+    font-size: 14px;
+}
+#banner .list li:hover{
+    background: #fff;
+}
+
+#banner .list li span:hover {
+    text-decoration: underline;
+    color: #ff5656;
+    cursor: default;
+    user-select: none;
+
+}
+#banner .list .expand{
+    position: absolute;
+    left: 220px;
+    background: #fff;
+    z-index: 100;
+    height: 100%;
+    width: 220px;
+    display: none;
+}
+
+#banner .right {
+    width: 980px;
+    margin-top: 4px;
+}
+
+
+#banner .banner {
+    width: 660px;
+    height: 234px;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner .banner ul {
+    position: relative;
+    left: 0;
+}
+
+#banner .banner li img {
+    width: 660px;
+}
+
+
+#banner .banner ol {
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    bottom: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+#banner .banner ol li {
+
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+    opacity: 0.6;
+    margin-left: 10px;
+
+}
+
+#banner .color {
+    background: blue;
+}
+
+#banner .right .btn {
+    display: none;
+}
+
+#banner .leftBtn {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    opacity: 0.5;
+}
+
+#banner .rightBtn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    opacity: 0.8;
+}
+
+#banner .ad {
+    width: 298px;
+    height: 234px;
+    /* background: red; */
+    position: relative;
+    background: #fff4e4;
+}
+
+#banner .img {
+    width: 980px;
+}
+
+#banner .img div {
+    /* padding: 20px; */
+    margin: 10px;
+    background: blanchedalmond;
+    border-radius: 20px;
+    width: 305px;
+    height: 114px;
+    position: relative;
+}
+
+#banner .right .img>div {
+    overflow: hidden;
+}
+
+#banner .right .img img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+#banner .right .ad img{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 134px;
+    height: 134px;
+}
+/* 主题部分 */
+#main .change {
+    background: #fff;
+    height: 56px;
+    line-height: 56px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#main .change h3 {
+    font-size: 18px;
+    color: #43240c;
+    display: inline-block;
+    margin-left: 52px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#main .change p {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #877a73;
+    line-height: 56px;
+}
+
+#main .productList {
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: none;
+    width: 276px;
+    height: 389px;
+    margin-bottom: 20px;
+}
+
+#main .productList .img {
+
+    overflow: hidden;
+    position: relative;
+    padding-top: 100%;
+    width: 100%;
+    display: block;
+
+}
+
+#main .productList img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    display: block;
+    transform: translate(-50%, -50%);
+}
+
+#main .productList .text {
+    padding: 10px 17px 17px;
+    box-sizing: border-box;
+}
+
+#main .productList .text .name {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    color: #877a73;
+    white-space: nowrap;
+}
+
+#main .productList .text .where {
+    overflow: hidden;
+    position: relative;
+    margin: 16px auto 0;
+    height: 18px;
+}
+
+#main .productList .text .where .left {
+    background-color: #f40;
+    padding: 0px 4px;
+    color: #fff;
+}
+
+#main .productList .text .where .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    color: #877a73;
+    box-shadow: none;
+}
+
+#main .productList .text .buy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 14px;
+    height: 28px;
+    font-size: 0;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+#main .productList .text .left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    vertical-align: bottom;
+}
+
+
+#main .productList .text .price {
+    color: #fa585a;
+    font-size: 0;
+    font-weight: 400;
+    line-height: 1;
+    margin-right: 6px;
+    vertical-align: bottom;
+}
+
+
+
+#main .productList .text .price-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+
+
+#main .productList .text .price-strong {
+    display: inline-block;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+#main .productList .text .sale-num {
+    display: inline-block;
+    font-size: 14px;
+    color: #877a73;
+    letter-spacing: 0;
+}
+
+#main .productList .text .price-value {
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    padding: 0;
+    width: 70px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fa585a;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px #fa585a;
+    vertical-align: bottom;
+    border-style: none;
+}
+
+/* 特殊栏 */
+#actGotop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 150px;
+    height: 195px;
+    display: none;
+    z-index: 100;
+}
+
+#actGotop a:link {
+    width: 150px;
+    height: 195px;
+    display: inline-block;
+    background: url(../images/gotop.jpg) no-repeat;
+    outline: none;
+}
+
+#actGotop a:hover {
+    width: 150px;
+    height: 195px;
+    background: url(../images/gotop.gif) no-repeat;
+    outline: none;
+}

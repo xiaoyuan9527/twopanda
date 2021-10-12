@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 重置样式表 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 公共样式表 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 特殊文字样式表 -->
+    <link rel="stylesheet" href="">
+    <!-- 当前页面样式表 -->
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/shoping.css">
+    <!-- 引入js样式文件 -->
+
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="header" class="content flexB">
+        <div class="logo">
+            <a href="index.html"><img src="./images/logo.png" alt=""></a>
+            <div class="right">
+                <h3>熊猫优选</h3>
+                <span>XIONG MAO YOU XUAN</span>
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="搜索商品，发现更多优惠">
+            <div class="btn">搜索</div>
+        </div>
+        <div class="tool">
+            <ul>
+                <li>
+                    <a href="login.html">
+                        <img src="./images/1.png" alt="">
+                        <span>登陆</span>
+                    </a>
+                </li>
+                <!-- 购物车事件 -->
+                <li>
+                    <a href="shop.html">
+                        <img src="./images/2.png" alt="">
+                        <span>购物车</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="./images/3.png" alt="">
+                    <span>品质保证</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div id="nav">
+        <ul class="content">
+            <!-- js默认跳转设置样式 -->
+            <a href="index.html">
+                <li style="background-color: #fee44e; color: #000;">首页</li>
+            </a>
+        </ul>
+    </div>
+    <!-- 商品列表 -->
+    <div id="shoping" class="content flexB">
+        <div class="left flexA">
+            <div class="img flex">
+                <div class="small">
+                    <img src="./images/个人博客.png" width="284" alt="">
+                    <div class="mask" id="mask"></div>
+                </div>
+                <div class="bigImg">
+                    <img src="./images/个人博客.png" width="1136" alt="" class="bigImgMove">
+                </div>
+            </div>
+
+            <div class="text">
+                <h1 class="top">
+                    <img src="./images/shop.png" class="one">
+                    <img src="./images/shopwhere.png" class="two">
+                    MaisonSelene美诗林护肤精华面膜女补水保湿滋润贴片5片装 MS-R8
+                </h1>
+                <div class="cmd-price">
+                    <p class="original-price"><i> 原价¥89.9</i></p>
+                    <div class="last-price">
+                        <span>券后价:</span>
+                        <span class="price">
+                            <i class="value-tag" style="font-size: 20px; font-style: normal;">¥</i>
+                            9<span class="digit" style="font-size: 28px;">.9</span>
+                        </span>
+                        <span class="coupon-info">80元券</span>
+                        <span class="sale-num">995人已买</span>
+                    </div>
+                </div>
+                <button>领券购买</button>
+            </div>
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div id="footer">
+        <div class="content">
+            <img src="http://img1.lukou.com/static/img/activity/icon.png" class="yx-icon">
+            <div class="text">
+                <h1 class="title">熊猫优选</h1>
+                <p class="slogan">年轻人网购首选<br>购物领券更省钱</p>
+            </div>
+            <div class="about-us">
+                <p class="items"><span class="line">|</span> <a href="#/downLoad" target="_blank" class="item">下载APP</a>
+                </p>
+            </div>
+            <div class="footer">
+                <p class="msg">
+                    <span>浙公安网备案 33010602009949号 | </span>
+                    ICP备案号: <a href="https://beian.miit.gov.cn" style="color: rgb(255, 255, 255);">浙ICP备17012864号-1</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</script>
+<script src="./js/jquery-2.2.4.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script>
+    class showImg {
+        constructor() {
+            this.boxObj = this.$$('.img');
+            this.smallObj = this.$$('.small');
+            this.maskObj = this.$$('.mask');
+            this.bigObj = this.$$('.bigImg');
+            this.bImg = this.$$('.bigImgMove');
+
+            // 给small绑定鼠标移入,移出事件
+            this.smallObj.addEventListener('mouseenter', this.enterFn.bind(this));
+            this.smallObj.addEventListener('mouseleave', this.leaveFn.bind(this));
+
+            // 绑定鼠标移动事件
+            this.smallObj.addEventListener('mousemove', this.moveFn.bind(this));
+
+        }
+        // 移入
+        enterFn() {
+            // console.log(this);
+            // 1 显示小黄块和大图
+            this.maskObj.style.display = 'block';
+            this.bigObj.style.display = 'block';
+        }
+        // 移出
+        leaveFn() {
+            this.maskObj.style.display = 'none';
+            this.bigObj.style.display = 'none';
+        }
+        // 移动
+        moveFn(event) {
+            // console.log(event);
+            // 1 获取鼠标的实时位置
+            let mx = event.pageX;
+            let my = event.pageY;
+            // 2 获取box的坐标值
+            let boxT = this.boxObj.offsetTop;
+            let boxL = this.boxObj.offsetLeft;
+
+            // 3 计算滑块的坐标
+            let tmpX = mx - boxL - this.maskObj.offsetWidth / 2;
+            let tmpY = my - boxT - this.maskObj.offsetHeight / 2;
+
+            // 3-1 计算最大的坐标
+            let maxL = this.smallObj.offsetWidth - this.maskObj.offsetWidth;
+            let maxT = this.smallObj.offsetHeight - this.maskObj.offsetHeight;
+
+            // 4 判断边界值
+            if (tmpX < 0) tmpX = 0
+            if (tmpY < 0) tmpY = 0;
+
+            // 最大值设置
+            if (tmpX > maxL) tmpX = maxL;
+            if (tmpY > maxT) tmpY = maxT;
+
+            this.maskObj.style.left = tmpX + 'px';
+            this.maskObj.style.top = tmpY + 'px';
+
+            // 计算大图在div中,移动的最大位置
+            let bigL = this.bigObj.offsetWidth - this.bImg.offsetWidth;
+            let bigT = this.bigObj.offsetHeight - this.bImg.offsetHeight;
+
+            // 计算大图的实时位置
+            let tmpBigT = tmpY / maxT * bigT;
+            let tmpBigL = tmpX / maxL * bigL;
+
+            // 实时位置设置给大图
+            this.bImg.style.left = tmpBigL + 'px';
+            this.bImg.style.top = tmpBigT + 'px';
+        }
+
+        $$(ele) {
+            return document.querySelector(ele)
+        }
+    }
+    new showImg;
+</script>
+
+</html>

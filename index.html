@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <script src="./js/jquery-2.2.4.js"></script>
+    <script src="./js/layer/layer.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/axios.js"></script>
+    <!-- 重置样式表 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 公共样式表 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 特殊文字样式表 -->
+    <link rel="stylesheet" href="">
+    <!-- 当前页面样式表 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 引入js样式文件 -->
+
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="header" class="content flexB">
+        <div class="logo">
+            <a href="index.html"><img src="./images/logo.png" alt=""></a>
+            <div class="right">
+                <h3>熊猫优选</h3>
+                <span>XIONG MAO YOU XUAN</span>
+            </div>
+        </div>
+        <div class="search">
+            <input type="texts" style="background-color: #f6f6f6;" placeholder="搜索商品，发现更多优惠">
+            <div class="btn">搜索</div>
+        </div>
+        <div class="tool">
+            <ul>
+                <li>
+                    <a href="login.html">
+                        <img src="./images/1.png" alt="">
+                        <span>登陆</span>
+                    </a>
+                </li>
+                <!-- 购物车事件 -->
+                <li>
+                    <a href="shop.html">
+                        <img src="./images/2.png" alt="">
+                        <span>购物车</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="./images/3.png" alt="">
+                    <span>品质保证</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div id="nav">
+        <ul class="content">
+            <!-- js默认跳转设置样式 -->
+            <a href="index.html">
+                <li style="width: 220px;">首页</li>
+            </a>
+            <a href="other.html">
+                <li>9块9包邮</li>
+            </a>
+            <a href="other1.html">
+                <li>超值大额劵</li>
+            </a>
+            <a href="other2.html">
+                <li>早秋人气上线</li>
+            </a>
+        </ul>
+    </div>
+    <!-- 轮播 -->
+    <div id="banner" class="content flex">
+        <div class="list flex">
+            <ul>
+                <li>
+                    <span>女装</span><span>/女鞋</span>
+                </li>
+                <li>
+                    <span>男装</span><span>/男鞋</span>
+                </li>
+                <li>
+                    <span>美妆</span><span>/个护</span>
+                </li>
+                <li>
+                    <span>配饰</span><span>/箱包</span>
+                </li>
+                <li>
+                    <span>零食王国</span>
+                </li>
+                <li>
+                    <span>母婴用品</span>
+                </li>
+                <li>
+                    <span>手机</span><span>/数码</span>
+                </li>
+                <li>
+                    <span>内衣袜子</span>
+                </li>
+                <li>
+                    <span>文娱</span><span>/家具</span>
+                </li>
+            </ul>
+            <div class="expand"></div>
+        </div>
+        <div class="right">
+            <div class="introduce flexA">
+                <!-- 轮播图部分 -->
+                <div class="banner">
+                    <div class="imgCheck">
+                        <ul class="flex">
+                            <li><img src="./images/banner1.jpeg" alt=""></li>
+                            <li><img src="./images/banner2.png" alt=""></li>
+                        </ul>
+                        <ol></ol>
+                    </div>
+                    <div class="btn">
+                        <a href="javascript:;" class="leftBtn">←</a>
+                        <a href="javascript:;" class="rightBtn">→</a>
+                    </div>
+                </div>
+                <div class="ad boxShadow">
+                    <img src="http://img1.lukou.com/static/coupon/p/image_link/Q34r2F1uSePMh64rnVsuidyw1Q7gWi0W.gif"
+                        alt="">
+                </div>
+            </div>
+            <div class="img flex">
+                <div class="boxShadow">
+                    <img src="./images/window.jpg" alt="">
+                </div>
+                <div class="boxShadow">
+                    <img src="./images/fire.jpg" alt="">
+                </div>
+                <div class="boxShadow">
+                    <img src="./images/water.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 主要内容 -->
+    <div id="main">
+        <div class="change content flex">
+            <h3>小编精选</h3>
+            <p>每天更新</p>
+        </div>
+        <div class="content flexA mainPronhub">
+            <!-- <div class="productList boxShadow">
+                <div class="img">
+                    <img src="./images/pic1.jpg" alt="">
+                </div>
+                <div class="text">
+                    <div class="name">短裤宽松女运动夏纯棉薄款外穿热裤2021新款高腰大码休闲阔腿家居</div>
+                    <div class="where">
+                        <span class="left">淘宝</span>
+                        <span class="right">包邮</span>
+                    </div>
+                    <div class="buy">
+                        <div class="left">
+                            <span class="price">
+                                <span class="price-tag">￥</span>
+                                <span class="price-strong">27</span>
+                            </span>
+                            <span class="sale-num">27人已买</span>
+                        </div>
+                        <span class="price-value">2元劵</span>
+                    </div>
+                </div>
+            </div>
+            <div class="productList boxShadow"></div> -->
+        </div>
+    </div>
+
+
+    <!-- 页脚 -->
+    <div id="footer">
+        <div class="content">
+            <img src="http://img1.lukou.com/static/img/activity/icon.png" class="yx-icon">
+            <div class="text">
+                <h1 class="title">熊猫优选</h1>
+                <p class="slogan">年轻人网购首选<br>购物领券更省钱</p>
+            </div>
+            <div class="about-us">
+                <p class="items"><span class="line">|</span> <a href="#/downLoad" target="_blank" class="item">下载APP</a>
+                </p>
+            </div>
+            <div class="footer">
+                <p class="msg">
+                    <span>浙公安网备案 33010602009949号 | </span>
+                    ICP备案号: <a href="https://beian.miit.gov.cn" style="color: rgb(255, 255, 255);">浙ICP备17012864号-1</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 特殊栏 -->
+    <div id="actGotop">
+        <a href="javascript:;" title="Top"></a>
+    </div>
+
+
+</body>
+<script>
+    //只能写在这儿才生效，其他位置无法生效的方法
+    function checkFn() {
+        layer.msg('已加入购物车');
+    }
+
+    function addCart(id, name, src, price, num) {
+        //1 获取购物车数据
+        let cartGoods = localStorage.getItem('cart')
+        //判断是否为空
+        if (cartGoods) {
+            cartGoods = JSON.parse(cartGoods);
+            // console.log(cartGoods);
+            let exists = false;
+            //遍历判断多次点击时的情况，数量的变化规律
+            cartGoods.forEach(v => {
+                // console.log(v);
+                if (v.id == id) {
+                    // 存在则增加数量
+                    // num += v.num;
+                    v.num = v.num - 0 + (num - 0)
+                    exists = true;
+                }
+            })
+            // console.log(cartGoods);
+            // 4-1不存在则添加商品数据
+            if (!exists) {
+                cartGoods.push({
+                    id,
+                    name,
+                    src,
+                    price,
+                    num
+                })
+            }
+            // 5 存入local
+            localStorage.setItem('cart', JSON.stringify(cartGoods))
+        } else { // 4 为空
+            // 4-1 以数组的形式保存         {id:1,name:''}  [id,name,src]
+            let tmpGoods = {
+                id,
+                name,
+                src,
+                price,
+                num
+            };
+            let goodsArr = [tmpGoods];
+            // console.log(JSON.stringify(goodsArr));
+            // localStorage.setItem('cart', JSON.stringify(tmpGoods))
+            localStorage.setItem('cart', JSON.stringify(goodsArr))
+        }
+    }
+    // 获取模型
+    var modal = document.getElementById('id01');
+
+    // 鼠标点击模型外区域关闭登录框
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    var modal = document.getElementById('id02');
+
+    // 鼠标点击模型外区域关闭登录框
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    //商品总概部分js
+    let liMove = document.querySelectorAll("#banner .list li");
+    let expandMove = $$("#banner .list .expand");
+    //遍历选中所有
+    liMove.forEach(function (v, k) {
+        let time = 0;
+        // 开启
+        v.onmouseover = function () {
+            time = setInterval(function () {
+                expandMove.style.display = "block";
+            }, 50)
+        }
+        // 关闭
+        v.onmouseout = function () {
+            clearInterval(time);
+            setTimeout(function(){
+                expandMove.style.display = "none";
+            },50)
+        }
+    })
+</script>
+
+</html>

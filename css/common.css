@@ -1,0 +1,271 @@
+/* 版心 */
+.content{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 清除浮动 */
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+/* 设置本文溢出 */
+.textOverflow{
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 默认文字样式 */
+.fsz{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 弹性盒子布局 */
+/* 水平分布对齐 */
+.flexA{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/* 水平两端对齐 */
+.flexB{
+    display: flex;
+    justify-content: space-between;
+}
+.flex{
+    display: flex;
+}
+
+/*设置鼠标移入显示虚影*/
+.boxShadow:hover{
+    box-shadow: #666 0px 0px 10px;
+}
+a{
+    text-decoration: none;
+}
+
+/* 实现图片轮播 */
+#banner{
+    overflow: hidden;
+}
+/* 利用img实现轮播效果 */
+#banner .img{
+    width: 2000px;
+    animation: banner infinite 12s linear;
+}
+#banner .img:hover{
+    animation-play-state: paused;
+}
+/* 改img为快 且实现点击 */
+#banner .img>img{
+    display: block;
+    float: left;
+    margin-left: 20px;
+    opacity: 0.8;
+}
+#banner .img>img:hover{
+    transform: scale(1.2,1.2);
+    opacity: 1;
+}
+
+/* 设置动画 */
+@keyframes banner {
+    0%{
+
+    }
+    100%{
+
+    }
+}
+
+/* 公共部分样式 */
+body{
+    background: #f6f6f6;
+}
+/* 头部 */
+#header {
+    height: 160px;
+}
+
+#header .logo {
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+#header .logo img {
+    width: 75px;
+    height: 75px;
+    float: left;
+}
+
+#header .logo .right {
+    float: left;
+    margin: 8px 0 0 15px;
+    text-align: center;
+}
+
+#header .logo h3 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+#header .logo span {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 17px;
+    transform: scale(.8);
+}
+
+#header .search {
+    position: relative;
+    border: 3px solid rgb(164, 152, 133);
+    border-radius: 34px;
+    width: 532px;
+    height: 43px;
+    background: no-repeat center left 15px/20px 20px url(".././images/search.png");
+    margin-top: 50px;
+}
+
+#header .search>input {
+    width: 355px;
+    height: 42px;
+    margin-left: 40px;
+    border-style: none;
+    outline: none;
+    background: #f6f6f6;
+}
+
+#header .search .btn {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    width: 124px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    color: #43200c;
+    background-color: #fee44e;
+    border-radius: 34px;
+}
+
+#header .tool {
+    margin-top: 45px;
+}
+
+#header .tool ul {
+    display: flex;
+}
+
+#header .tool ul:last-child {
+    margin-right: 40px;
+}
+
+#header .tool li {
+    position: relative;
+    margin-right: 25px;
+    width: 44px;
+    height: 60px;
+    text-align: center;
+}
+
+#header .tool img {
+    width: 40px;
+    display: inline-block;
+}
+
+#header .tool span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    font-size: 12px;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    color: #877a73;
+}
+/* 导航栏样式 */
+#nav li:hover {
+    color: #000;
+    background-color: #fee44e;
+}
+/* 独特样式 */
+#nav .liHover {
+    background-color: #fee44e;
+    color: #000;
+}
+
+/* 页脚 */
+/* 页脚 */
+#footer {
+    width: 100%;
+    height: 240px;
+    background: #000;
+    opacity: .706;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    font-family: PingFang-SC-Medium;
+    margin-top: 81px;
+}
+#footer .yx-icon{
+    float: left;
+    width: 112px;
+    height: 112px;
+    margin: 37px 19px 0 40px;
+    margin-right: 19px;
+}
+#footer .text{
+    display: inline-block;
+    text-align: center;
+    margin-top: 45px;
+    margin-right: 444px;
+}
+#footer .text .title{
+    font-size: 36px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+}
+#footer .text .slogan{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+#footer .about-us{
+    margin-top: -56px;
+    
+}
+#footer .about-us a{
+    color: #fff;
+    text-decoration: none;
+}
+#footer .about-us a:hover{
+    color: blue;
+}
+#footer .items{
+    font-size: 20px;
+    margin-left: 502px;
+}
+#footer .footer{
+    position: relative;
+    text-align: center;
+    margin-top: 88px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
