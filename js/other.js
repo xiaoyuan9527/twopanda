@@ -45,6 +45,12 @@ window.onload = function () {
         </div>`;
             })
             $$('#main .mainPronhub').innerHTML = html;
+            let onclickA = document.querySelectorAll(".price-value");
+            onclickA.forEach(function(v,k){
+                v.onclick = function(){
+                    layer.msg('请前往主页面进行添加');
+                }
+            })
             let onclickGo = document.querySelectorAll("#main .productList .img");
             onclickGo.forEach(function (v, k) {
                 v.onclick = function () {

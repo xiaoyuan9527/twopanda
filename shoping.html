@@ -99,10 +99,16 @@
                 <button>领券购买</button>
             </div>
 
-        </div>
-        <div class="right">
-
-        </div> -->
+        </div>-->
+        <!-- <div class="right">
+            <h2 class="textH">————卖家————</h2>
+            <img class="img" src="" alt="">
+            <div class="bottom">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>  -->
     </div>
 
     <!-- 页脚 -->
@@ -135,6 +141,12 @@
 <script src="./js/common.js"></script>
 <script src="./js/shoping.js"></script>
 <script>
+    let spanS = document.querySelectorAll("#shoping .right .bottom>div span");
+    spanS.forEach(function(v,k){
+        v.innerHTML = (Math.random()*(1-0)+4).toFixed(1);
+    })
+    $$(".coupon-info").innerHTML = Math.ceil(Math.random()*8)*10+"元劵";
+    
     
     class showImg {
         constructor() {

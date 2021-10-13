@@ -40,9 +40,25 @@ function getShopGoods() {
         </div>
     </div>
     <div class="right">
-
+        <h2 class="textH">————卖家————</h2>
+        <img class="img" src="" alt="">
+        <div class="bottom">
+            <div>
+                描述
+                <span></span>
+            </div>
+            <div>
+                服务
+                <span></span>
+            </div>
+            <div>
+                物流
+                <span></span>
+            </div>
+        </div>
     </div>`;
     });
+    
 
     //添加到指定页面位置中
     $$('#shoping').innerHTML = html;

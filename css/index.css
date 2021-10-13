@@ -74,7 +74,7 @@
 
 #banner .right {
     width: 980px;
-    margin-top: 4px;
+    /* margin-top: 4px; */
 }
 
 
@@ -151,12 +151,11 @@
 }
 
 #banner .img div {
-    /* padding: 20px; */
     margin: 10px;
     background: blanchedalmond;
     border-radius: 20px;
     width: 305px;
-    height: 114px;
+    height: 120px;
     position: relative;
 }
 
@@ -361,8 +360,8 @@
 }
 
 
-/* 
-#actGotop a:hover {
+
+/* #actGotop a:hover {
     width: 150px;
     height: 195px;
     background: url(../images/gotop.gif) no-repeat;

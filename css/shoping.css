@@ -23,7 +23,8 @@
     display: none;
     z-index: 10;
 }
-#shoping .img .small{
+
+#shoping .img .small {
     position: relative;
 }
 
@@ -32,11 +33,12 @@
     width: 284px;
     height: 284px;
     position: absolute;
-    left: 284px;
+    left: 288px;
     z-index: 100;
     display: none;
 }
-#shoping .bigImgMove{
+
+#shoping .bigImgMove {
     position: absolute;
 }
 
@@ -143,7 +145,8 @@
     margin-right: 27px;
     float: right;
 }
-#shoping .right{
+
+#shoping .right {
     float: right;
     width: 275px;
     height: 352px;
@@ -151,4 +154,46 @@
     border: 1px solid #fee44e;
     font-weight: 500;
     text-align: center;
+}
+
+#shoping .right .img {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+    margin-top: 10px;
+    background: red;
+}
+
+#shoping .right .textH {
+    text-align: center;
+    height: 50px;
+    padding-top: 10px;
+    /* line-height: 60px; */
+    background: linear-gradient(180deg, #fee44e, #fff 85%, #fff);
+}
+
+#shoping .right .bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 60px;
+}
+
+
+#shoping .right .bottom>div {
+    width: 40px;
+    height: 40px;
+    /* background: pink; */
+    /* line-height: 50px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #b1a9a5;
+}
+#shoping .right .bottom>div span{
+    margin-top: 4px;
+    display: block;
+    color: #fb9547;
+    line-height: 20px;
+    font-size: 14px;
 }
