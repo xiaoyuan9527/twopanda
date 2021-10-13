@@ -110,7 +110,9 @@
                     <span>文娱</span><span>/家具</span>
                 </li>
             </ul>
-            <div class="expand"></div>
+            <div class="expand">
+                <h3></h3>
+            </div>
         </div>
         <div class="right">
             <div class="introduce flexA">
@@ -129,7 +131,7 @@
                     </div>
                 </div>
                 <div class="ad boxShadow">
-                    <div class="ad-text">9.9包邮</div>
+                    <div>9.9包邮</div>
                     <img src="http://img1.lukou.com/static/coupon/p/image_link/Q34r2F1uSePMh64rnVsuidyw1Q7gWi0W.gif"alt="">
                 </div>
             </div>
@@ -203,12 +205,14 @@
     </div>
     <!-- 特殊栏 -->
     <div id="actGotop">
-        <a href="javascript:;" title="Top"></a>
+        <a href="javascript:;" title="Top">顶部</a>
     </div>
 
 
 </body>
 <script>
+
+    
     //只能写在这儿才生效，其他位置无法生效的方法
     function checkFn() {
         layer.msg('已加入购物车');
@@ -277,6 +281,7 @@
             modal.style.display = "none";
         }
     }
+
     //商品总概部分js
     let liMove = document.querySelectorAll("#banner .list li");
     let expandMove = $$("#banner .list .expand");
@@ -284,17 +289,18 @@
     liMove.forEach(function (v, k) {
         let time = 0;
         // 开启
-        v.onmouseover = function () {
+        v.onmouseenter = function () {
             time = setInterval(function () {
-                expandMove.style.display = "block";
+                expandMove.classList.add("expandS");
+                expandMove.firstElementChild.innerText = "这是第"+k+"页";
             }, 50)
         }
         // 关闭
-        v.onmouseout = function () {
+        v.onmouseleave = function () {
             clearInterval(time);
             setTimeout(function(){
-                expandMove.style.display = "none";
-            },50)
+                expandMove.classList.remove("expandS");
+            },10)
         }
     })
 </script>

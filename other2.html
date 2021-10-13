@@ -128,58 +128,9 @@
     </div>
 
 </body>
-
-
 <script src="./js/jquery-2.2.4.js"></script>
 <script src="./js/layer/layer.js"></script>
-<script src="./js/common.js"></script>
 <script src="./js/axios.js"></script>
-<script>
-    let navLi = document.querySelectorAll("#nav li");
-    let bannerUl = $$("#banner ul");
-    // 遍历导航栏，给予点击按钮样式
-    navLi.forEach(function (v, i) {
-        navLi[3].classList.add("liHover");
-        v.onclick = function () {
-            $$(".liHover").classList.remove("liHover");
-            navLi[i].classList.add("liHover");
-        }
-    })
-    //导入商品数据
-    axios.get("./goods.json").then(data => {
-        // console.log(JSON.parse(data));
-        let html = "";
-        JSON.parse(data).forEach((v, k) => {
-            // console.log(v.src);
-            html +=
-                `<div class="productList boxShadow">
-            <div class="img">
-                <img src="${v.src}" alt="">
-            </div>
-            <div class="text">
-                <div class="name">${v.name}</div>
-                <div class="where">
-                    <span class="left">${v.where}</span>
-                    <span class="right">包邮</span>
-                </div>
-                <div class="buy">
-                    <div class="left">
-                        <span class="price">
-                            <span class="price-tag">￥</span>
-                            <span class="price-strong">${v.price}</span>
-                        </span>
-                        <span class="sale-num">${v.nums}人已买</span>
-                    </div>
-                    <a href="javascript:;" class="price-value" onclick="checkFn();addCart(${v.id},'${v.name}','${v.src}','${v.price}',1)">加入购物车</a>
-                    
-                </div>
-            </div>
-        </div>`;
-        })
-
-        $$('#main .mainPronhub').innerHTML = html;
-
-    })
-    
-</script>
+<script src="./js/common.js"></script>
+<script src="./js/other.js"></script>
 </html>

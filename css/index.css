@@ -61,6 +61,16 @@
     width: 220px;
     display: none;
 }
+#banner .list .expandS{
+    display: block;
+}
+#banner .list .expand:hover{
+    display: block;
+}
+#banner .list .expand h3{
+    text-align: center;
+    line-height: 60px;
+}
 
 #banner .right {
     width: 980px;
@@ -134,15 +144,7 @@
     background: #fff4e4;
 }
 
-#banner .ad .ad-text{
-    display: block;
-    position: absolute;
-    left: 10px;
-    top: 40px;
-    color: red;
-    font-size: 30px;
-    font-weight: 500;
-}
+
 
 #banner .img {
     width: 980px;
@@ -173,6 +175,16 @@
     right: 20px;
     width: 134px;
     height: 134px;
+}
+
+#banner .right .ad div{
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    color: red;
+    font-size: 30px;
+    font-weight: 500;
+    z-index: 200;
 }
 /* 主题部分 */
 #main .change {
@@ -340,25 +352,34 @@
 /* 特殊栏 */
 #actGotop {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 150px;
-    height: 195px;
+    top: 120px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
     display: none;
     z-index: 100;
 }
 
-#actGotop a:link {
-    width: 150px;
-    height: 195px;
-    display: inline-block;
-    background: url(../images/gotop.jpg) no-repeat;
-    outline: none;
-}
 
+/* 
 #actGotop a:hover {
     width: 150px;
     height: 195px;
     background: url(../images/gotop.gif) no-repeat;
     outline: none;
+} */
+
+
+#actGotop a:link {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background: #567a56;
+    cursor: pointer;
+    display: inline-block;
+    /* background: url(../images/gotop.jpg) no-repeat; */
+    outline: none;
+    text-align: center;
+    line-height: 60px;
 }
