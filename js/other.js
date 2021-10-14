@@ -48,6 +48,7 @@ window.onload = function () {
             let stateG = localStorage.getItem("state");
             let priceValue = document.querySelectorAll(".price-value");
             let shopNum = $$("#header .tool .num div");
+            let shopClick = $$("#header .tool .num");
             // 给每个加入购物车添加点击事件
             priceValue.forEach(function (v, k) {
                 //当点击时，判断是否加入localstroage
@@ -74,10 +75,15 @@ window.onload = function () {
                 let nums = 0;
                 let numsGoods = localStorage.getItem('cart');
                 numsGoods = JSON.parse(numsGoods);
-                numsGoods.forEach(function(v,k){
+                numsGoods.forEach(function (v, k) {
                     nums += v.num;
                 })
                 shopNum.innerHTML = nums;
+                if (nums > 0) {
+                    shopClick.onclick = function () {
+                        window.location.href = './shop.html';
+                    }
+                }
             }
             //數據添加方法
             function addCart(id, name, src, price, num) {

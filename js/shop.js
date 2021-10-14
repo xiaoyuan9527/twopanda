@@ -1,15 +1,33 @@
+//二维码付款按钮
 let priceNums = document.querySelector(".price");
-    document.querySelector(".getMoney").onclick = function () {
-        if ((priceNums.innerHTML - 0) != 0) {
-            layer.open({
-                type: 1,
-                skin: 'layui-layer-rim', //加上边框
-                area: ['260px', '350px'], //宽高
-                content: '<h3>请扫描二维码付款</h3><br><img src="./images/个人博客.png" alt="">'
-            });
-        }
-
+document.querySelector(".getMoney").onclick = function () {
+    if ((priceNums.innerHTML - 0) != 0) {
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-rim', //加上边框
+            area: ['260px', '350px'], //宽高
+            content: '<h3>请扫描二维码付款</h3><br><img src="./images/个人博客.png" alt="">'
+        });
     }
+
+}
+// //判断是否有数据
+// let cartS = localStorage.getItem('cart');
+// let tableS = document.querySelector(".cartTable");
+// let footS = document.querySelector("#main .foot");
+// let textS = document.querySelector("#main .change h3");
+
+// if (!cartS) {
+//     tableS.style.display = "none";
+//     footS.style.display = "none";
+//     textS.innerHTML = "您未选择商品，请跳转页面选择商品";
+// } else {
+//     tableS.style.display = "block";
+//     footS.style.display = "block";
+//     new Carts;
+// }
+
+
 
 class Carts {
     constructor() {
@@ -65,7 +83,7 @@ class Carts {
         numObj.value = num;
         //获取其父亲节点
         let tdObj = tar.parentNode;
-        
+
         //获取其价格变量
         let price = tdObj.previousElementSibling.innerHTML;
         // console.log(price);
@@ -96,7 +114,7 @@ class Carts {
                 // console.log(price);
                 totaNum += num;
                 totaPrice += price;
-                console.log(totaNum,totaPrice);
+                console.log(totaNum, totaPrice);
             }
         })
         //将得到的数给予相对应的位置

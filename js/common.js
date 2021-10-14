@@ -2,7 +2,7 @@ function $$(tag) {
     return document.querySelector(tag);
 }
 
-let shopNum = $$("#header .tool .num div");
+let shopNum = $$("#header .tool .num>div");
 let shopClick = $$("#header .tool .num");
 let stateG = localStorage.getItem("state");
 let cartG = localStorage.getItem("cart");
@@ -20,14 +20,16 @@ function getnums() {
                 nums += (data.num - 0);
             })
             shopNum.innerHTML = nums;
+            if (nums > 0) {
+                shopClick.onclick = function () {
+                    window.location.href = './shop.html';
+                }
+            }
         }
         //当登陆之后
         //给购物车跳转
         shopClick.onmouseenter = function () {
             shopClick.classList.add("cursorHand");
-        }
-        shopClick.onclick = function () {
-            window.location.href = './shop.html';
         }
     }
 }

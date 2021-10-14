@@ -190,6 +190,10 @@ body{
     text-align: center;
     line-height: 20px;
     color: #FFF;
+    display: block;
+}
+#header .tool .num>div{
+    display: none;
 }
 
 #header .tool img {
