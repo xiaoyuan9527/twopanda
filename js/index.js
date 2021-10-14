@@ -123,12 +123,17 @@ window.onload = function () {
                 </div>
             </div>`;
             })
+
             $$('#main .mainPronhub').innerHTML = html;
+
+
+
+            // 将数据导入商品详情页面
             let onclickGo = document.querySelectorAll("#main .productList .img");
             onclickGo.forEach(function (v, k) {
                 v.onclick = function () {
                     // console.log(shop.firstElementChild.firstElementChild.src);
-                    
+                    //获取系列需要的数据
                     let shop = this.parentNode;
                     // console.log(shop);
                     let img = shop.firstElementChild.firstElementChild.src;
@@ -143,6 +148,7 @@ window.onload = function () {
                     window.location.href = './shoping.html';
                 }
 
+                // 将数据添加入localStorage
                 function addShop(img,name,price,num) {
                     //清空原有的localstore
                     localStorage.removeItem('shop');

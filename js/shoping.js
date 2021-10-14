@@ -1,3 +1,14 @@
+let navLi = document.querySelectorAll("#nav li");
+    // let bannerUl = $$("#banner ul");
+    // 遍历导航栏，给予点击按钮样式
+    navLi.forEach(function (v, i) {
+        navLi[1].classList.add("liHover");
+        v.onclick = function () {
+            $$(".liHover").classList.remove("liHover");
+            navLi[i].classList.add("liHover");
+        }
+    })
+
 getShopGoods();
 
 //数据的传递
@@ -41,7 +52,7 @@ function getShopGoods() {
     </div>
     <div class="right">
         <h2 class="textH">————卖家————</h2>
-        <img class="img" src="" alt="">
+        <img class="img" src="//img.alicdn.com/bao/uploaded/i1/72567254/O1CN0136ERVn23SNlKNzhQA_!!72567254.jpg_200x200q90.jpg_.webp" alt="">
         <div class="bottom">
             <div>
                 描述

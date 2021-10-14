@@ -40,11 +40,10 @@
                     </a>
                 </li>
                 <!-- 购物车事件 -->
-                <li>
-                    <a href="shop.html">
-                        <img src="./images/2.png" alt="">
-                        <span>购物车</span>
-                    </a>
+                <li class="num">
+                    <div></div>
+                    <img src="./images/2.png" alt="">
+                    <span>购物车</span>
                 </li>
                 <li>
                     <img src="./images/3.png" alt="">
@@ -140,4 +139,17 @@
 <script src="./js/axios.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/other.js"></script>
+<script>
+    let navLi = document.querySelectorAll("#nav li");
+    // let bannerUl = $$("#banner ul");
+    // 遍历导航栏，给予点击按钮样式
+    navLi.forEach(function (v, i) {
+        navLi[1].classList.add("liHover");
+        v.onclick = function () {
+            $$(".liHover").classList.remove("liHover");
+            navLi[i].classList.add("liHover");
+        }
+    })
+</script>
+
 </html>

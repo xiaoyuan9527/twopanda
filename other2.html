@@ -42,11 +42,10 @@
                     </a>
                 </li>
                 <!-- 购物车事件 -->
-                <li>
-                    <a href="shop.html">
-                        <img src="./images/2.png" alt="">
-                        <span>购物车</span>
-                    </a>
+                <li class="num">
+                    <div></div>
+                    <img src="./images/2.png" alt="">
+                    <span>购物车</span>
                 </li>
                 <li>
                     <img src="./images/3.png" alt="">
@@ -60,10 +59,18 @@
     <div id="nav">
         <ul class="content">
             <!-- js默认跳转设置样式 -->
-            <a href="index.html"><li style="width: 220px;">首页</li></a>
-            <a href="other.html"><li>9块9包邮</li></a>
-            <a href="other1.html"><li>超值大额劵</li></a>
-            <a href="other2.html"><li>早秋人气上线</li></a>
+            <a href="index.html">
+                <li style="width: 220px;">首页</li>
+            </a>
+            <a href="other.html">
+                <li>9块9包邮</li>
+            </a>
+            <a href="other1.html">
+                <li>超值大额劵</li>
+            </a>
+            <a href="other2.html">
+                <li>早秋人气上线</li>
+            </a>
         </ul>
     </div>
     <!-- 主要内容 -->
@@ -133,4 +140,17 @@
 <script src="./js/axios.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/other.js"></script>
+<script>
+    let navLi = document.querySelectorAll("#nav li");
+    // let bannerUl = $$("#banner ul");
+    // 遍历导航栏，给予点击按钮样式
+    navLi.forEach(function (v, i) {
+        navLi[3].classList.add("liHover");
+        v.onclick = function () {
+            $$(".liHover").classList.remove("liHover");
+            navLi[i].classList.add("liHover");
+        }
+    })
+</script>
+
 </html>

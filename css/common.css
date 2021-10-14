@@ -48,6 +48,10 @@
 a{
     text-decoration: none;
 }
+/* 鼠标移入手型 */
+.cursorHand{
+    cursor: s-resize;
+}
 
 /* 实现图片轮播 */
 #banner{
@@ -174,6 +178,18 @@ body{
     width: 44px;
     height: 60px;
     text-align: center;
+}
+#header .tool .num .classDiv{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #FFF;
 }
 
 #header .tool img {

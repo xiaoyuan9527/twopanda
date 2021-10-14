@@ -43,11 +43,10 @@
                     </a>
                 </li>
                 <!-- 购物车事件 -->
-                <li>
-                    <a href="shop.html">
-                        <img src="./images/2.png" alt="">
-                        <span>购物车</span>
-                    </a>
+                <li class="num">
+                    <div></div>
+                    <img src="./images/2.png" alt="">
+                    <span>购物车</span>
                 </li>
                 <li>
                     <img src="./images/3.png" alt="">
@@ -61,8 +60,9 @@
         <ul class="content">
             <!-- js默认跳转设置样式 -->
             <a href="index.html">
-                <li style="background-color: #fee44e; color: #000;">首页</li>
+                <li>首页</li>
             </a>
+            <li>商品详情</li>
         </ul>
     </div>
     <!-- 商品列表 -->
@@ -141,13 +141,16 @@
 <script src="./js/common.js"></script>
 <script src="./js/shoping.js"></script>
 <script>
+    //评分
     let spanS = document.querySelectorAll("#shoping .right .bottom>div span");
     spanS.forEach(function(v,k){
+        //为了方便简单用随机数评分
         v.innerHTML = (Math.random()*(1-0)+4).toFixed(1);
     })
+    //随机数劵
     $$(".coupon-info").innerHTML = Math.ceil(Math.random()*8)*10+"元劵";
     
-    
+    //放大镜效果
     class showImg {
         constructor() {
             this.boxObj = this.$$('.img');

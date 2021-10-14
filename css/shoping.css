@@ -161,14 +161,12 @@
     height: 160px;
     margin: auto;
     margin-top: 10px;
-    background: red;
 }
 
 #shoping .right .textH {
     text-align: center;
     height: 50px;
     padding-top: 10px;
-    /* line-height: 60px; */
     background: linear-gradient(180deg, #fee44e, #fff 85%, #fff);
 }
 
@@ -183,8 +181,6 @@
 #shoping .right .bottom>div {
     width: 40px;
     height: 40px;
-    /* background: pink; */
-    /* line-height: 50px; */
     display: flex;
     flex-direction: column;
     justify-content: center;

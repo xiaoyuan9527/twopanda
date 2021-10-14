@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首頁</title>
-    <script src="./js/jquery-2.2.4.js"></script>
-    <script src="./js/layer/layer.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/axios.js"></script>
+
     <!-- 重置样式表 -->
     <link rel="stylesheet" href="css/reset.css">
     <!-- 公共样式表 -->
@@ -46,11 +43,10 @@
                     </a>
                 </li>
                 <!-- 购物车事件 -->
-                <li>
-                    <a href="shop.html">
-                        <img src="./images/2.png" alt="">
-                        <span>购物车</span>
-                    </a>
+                <li class="num">
+                    <div></div>
+                    <img src="./images/2.png" alt="">
+                    <span>购物车</span>
                 </li>
                 <li>
                     <img src="./images/3.png" alt="">
@@ -132,7 +128,8 @@
                 </div>
                 <div class="ad boxShadow">
                     <div>9.9包邮</div>
-                    <img src="http://img1.lukou.com/static/coupon/p/image_link/Q34r2F1uSePMh64rnVsuidyw1Q7gWi0W.gif"alt="">
+                    <img src="http://img1.lukou.com/static/coupon/p/image_link/Q34r2F1uSePMh64rnVsuidyw1Q7gWi0W.gif"
+                        alt="">
                 </div>
             </div>
             <div class="img flex">
@@ -211,10 +208,9 @@
 
 </body>
 <script>
-
-    
     //只能写在这儿才生效，其他位置无法生效的方法
     function checkFn() {
+        
         layer.msg('已加入购物车');
     }
 
@@ -264,7 +260,11 @@
             localStorage.setItem('cart', JSON.stringify(goodsArr))
         }
     }
-    
 </script>
+<script src="./js/jquery-2.2.4.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/axios.js"></script>
+<script src="./js/common.js"></script>
 
 </html>

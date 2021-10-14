@@ -33,7 +33,6 @@
     background: #fff;
     height: 56px;
     line-height: 56px;
-    /* margin-top: 10px; */
     margin-bottom: 20px;
 }
 
@@ -47,6 +46,9 @@
     cursor: default;
 }
 #main .change li:hover{
+    border-bottom: 3px solid #500;
+}
+#main .change .liclass{
     border-bottom: 3px solid #500;
 }
 

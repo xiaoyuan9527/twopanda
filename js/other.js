@@ -1,12 +1,12 @@
 window.onload = function () {
-    let navLi = document.querySelectorAll("#nav li");
-    let bannerUl = $$("#banner ul");
-    // 遍历导航栏，给予点击按钮样式
-    navLi.forEach(function (v, i) {
-        navLi[1].classList.add("liHover");
+    //导航下边框样式
+    let liobj = document.querySelectorAll("#main .change li");
+    // console.log(liobj);
+    liobj.forEach(function (v, i) {
+        liobj[0].classList.add("liclass");
         v.onclick = function () {
-            $$(".liHover").classList.remove("liHover");
-            navLi[i].classList.add("liHover");
+            $$(".liclass").classList.remove("liclass");
+            liobj[i].classList.add("liclass");
         }
     })
 

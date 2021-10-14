@@ -5,11 +5,11 @@ login.onclick = function () {
     let userobj = $$('#userName');
     let pwdobj = $$('#pwdName');
     // console.log(userobj.value, pwdobj.value);
-    if(userobj.value == ""){
+    if (userobj.value == "") {
         layer.msg('用户名不能为空');
-    }else if(pwdobj.value == ""){
+    } else if (pwdobj.value == "") {
         layer.msg('密码不能为空');
-    }else if (userobj.value != "" || pwdobj.value != "") {
+    } else if (userobj.value != "" || pwdobj.value != "") {
         ajax(userobj.value, pwdobj.value);
 
     }
@@ -32,6 +32,8 @@ function ajax(user, pwd) {
             // console.log(xhr.response);
             if (xhr.response == 2) {
                 layer.msg('登陆成功，请稍等');
+                let state = true;
+                addSmallShop(state);
                 setTimeout(function () {
                     window.location.href = './index.html';
                 }, 1000);
@@ -45,4 +47,19 @@ function ajax(user, pwd) {
             }
         }
     }
+}
+//登陆成功有数据储存
+function addSmallShop(state) {
+    //清空原有的localstore
+    localStorage.removeItem('state');
+    // window.localStorage.removeItem('state');
+
+    //1 获取购物车数据
+    localStorage.getItem("state")
+    // 4-1 以数组的形式保存         {id:1,name:''}  [id,name,src]
+    let tmpGoods = {
+        state
+    };
+    let goodsArr = [tmpGoods];
+    localStorage.setItem('state', JSON.stringify(goodsArr))
 }
