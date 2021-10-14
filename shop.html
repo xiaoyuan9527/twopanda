@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>購物車</title>
     <!-- 重置样式表 -->
     <link rel="stylesheet" href="css/reset.css">
     <!-- 公共样式表 -->
@@ -57,7 +57,9 @@
     <div id="nav">
         <ul class="content">
             <!-- js默认跳转设置样式 -->
-            <a href="index.html"><li>首页</li></a>
+            <a href="index.html">
+                <li>首页</li>
+            </a>
         </ul>
     </div>
     <!-- 主要内容 -->
@@ -105,7 +107,7 @@
                 &nbsp;全选
             </label>
             <div>
-                已选商品&nbsp;&nbsp;<span class="num price-color">0</span>件;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                已选商品&nbsp;&nbsp;<span class="allnum price-color">0</span>件;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 合计:￥&nbsp;&nbsp;<span class="price price-color">0.00</span>
                 <input type="button" class="getMoney" value="结算">
@@ -136,73 +138,8 @@
 
 </body>
 
-<script>
-    let priceNum = document.querySelector(".price");
-    document.querySelector(".getMoney").onclick = function () {
-        if((priceNum.innerHTML-0) != 0){
-            layer.open({
-            type: 1,
-            skin: 'layui-layer-rim', //加上边框
-            area: ['260px', '350px'], //宽高
-            content: '<h3>请扫描二维码付款</h3><br><img src="./images/个人博客.png" alt="">'
-        });
-        }
-        
-    }
-
-    function addCart(id, name, src, price, num) {
-        //1 获取购物车数据
-        let cartGoods = localStorage.getItem('cart')
-        //判断是否为空
-        if (cartGoods) {
-            cartGoods = JSON.parse(cartGoods);
-            // console.log(cartGoods);
-            let exists = false;
-            //遍历判断多次点击时的情况，数量的变化规律
-            cartGoods.forEach(v => {
-                // console.log(v);
-                if (v.id == id) {
-                    // 存在则增加数量
-                    // num += v.num;
-                    v.num = v.num - 0 + (num - 0)
-                    exists = true;
-                }
-            })
-            // console.log(cartGoods);
-            // 4-1不存在则添加商品数据
-            if (!exists) {
-                cartGoods.push({
-                    id,
-                    name,
-                    src,
-                    price,
-                    num
-                })
-            }
-
-            // 5 存入local
-            localStorage.setItem('cart', JSON.stringify(cartGoods))
-
-        } else { // 4 为空
-            // 4-1 以数组的形式保存         {id:1,name:''}  [id,name,src]
-
-            let tmpGoods = {
-                id,
-                name,
-                src,
-                price,
-                num
-            };
-            let goodsArr = [tmpGoods];
-
-            // console.log(JSON.stringify(goodsArr));
-            // localStorage.setItem('cart', JSON.stringify(tmpGoods))
-            localStorage.setItem('cart', JSON.stringify(goodsArr))
-        }
-    }
-</script>
 <script src="./js/jquery-2.2.4.js"></script>
 <script src="./js/shop.js"></script>
 <script src="./js/layer/layer.js"></script>
-<script src="./js/common.js"></script>
+
 </html>

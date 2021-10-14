@@ -117,7 +117,7 @@ window.onload = function () {
                             </span>
                             <span class="sale-num">${v.nums}人已买</span>
                         </div>
-                        <a href="javascript:;" class="price-value" onclick="checkFn();addCart(${v.id},'${v.name}','${v.src}','${v.price}',1)">加入购物车</a>
+                        <a href="javascript:;" class="price-value">加入购物车</a>
                         
                     </div>
                 </div>
@@ -125,8 +125,87 @@ window.onload = function () {
             })
 
             $$('#main .mainPronhub').innerHTML = html;
-
-
+            let stateG = localStorage.getItem("state");
+            let priceValue = document.querySelectorAll(".price-value");
+            let shopNum = $$("#header .tool .num div");
+            // 给每个加入购物车添加点击事件
+            priceValue.forEach(function (v, k) {
+                //当点击时，判断是否加入localstroage
+                v.onclick = function () {
+                    if (stateG) {
+                        layer.msg('已加入购物车');
+                        //打开json文件，遍历找到被点击的部分，添加当前的数据
+                        axios.get("./goods.json").then(data => {
+                            JSON.parse(data).forEach((v, kk) => {
+                                if (kk == k) {
+                                    addCart(v.id, v.name, v.src, v.price, 1);
+                                    //再次取得num,追加到页面
+                                    modLocal();
+                                }
+                            })
+                        })
+                    } else {
+                        layer.msg('請登陸後再添加');
+                    }
+                }
+            })
+            //更新数据
+            function modLocal() {
+                let nums = 0;
+                let numsGoods = localStorage.getItem('cart');
+                numsGoods = JSON.parse(numsGoods);
+                numsGoods.forEach(function(v,k){
+                    nums += v.num;
+                })
+                shopNum.innerHTML = nums;
+            }
+            //數據添加方法
+            function addCart(id, name, src, price, num) {
+                //1 获取购物车数据
+                let cartGoods = localStorage.getItem('cart')
+                //判断是否为空
+                if (cartGoods) {
+                    cartGoods = JSON.parse(cartGoods);
+                    // console.log(cartGoods);
+                    let exists = false;
+                    //遍历判断多次点击时的情况，数量的变化规律
+                    cartGoods.forEach(v => {
+                        // console.log(v);
+                        if (v.id == id) {
+                            // 存在则增加数量
+                            // num += v.num;
+                            v.num = v.num - 0 + (num - 0)
+                            exists = true;
+                        }
+                    })
+                    // console.log(cartGoods);
+                    // 4-1不存在则添加商品数据
+                    if (!exists) {
+                        cartGoods.push({
+                            id,
+                            name,
+                            src,
+                            price,
+                            num
+                        })
+                    }
+                    // 5 存入local
+                    localStorage.setItem('cart', JSON.stringify(cartGoods))
+                } else { // 4 为空
+                    // 4-1 以数组的形式保存         {id:1,name:''}  [id,name,src]
+                    let tmpGoods = {
+                        id,
+                        name,
+                        src,
+                        price,
+                        num
+                    };
+                    let goodsArr = [tmpGoods];
+                    // console.log(JSON.stringify(goodsArr));
+                    // localStorage.setItem('cart', JSON.stringify(tmpGoods))
+                    localStorage.setItem('cart', JSON.stringify(goodsArr))
+                }
+            }
 
             // 将数据导入商品详情页面
             let onclickGo = document.querySelectorAll("#main .productList .img");
@@ -143,13 +222,13 @@ window.onload = function () {
                     // console.log(price);
                     let num = shop.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
                     // console.log(num);
-                    addShop(img,name,price,num);
+                    addShop(img, name, price, num);
                     // 执行跳转
                     window.location.href = './shoping.html';
                 }
 
                 // 将数据添加入localStorage
-                function addShop(img,name,price,num) {
+                function addShop(img, name, price, num) {
                     //清空原有的localstore
                     localStorage.removeItem('shop');
                     // window.localStorage.removeItem('shop');
@@ -229,15 +308,15 @@ window.onload = function () {
         v.onmouseenter = function () {
             time = setInterval(function () {
                 expandMove.classList.add("expandS");
-                expandMove.firstElementChild.innerText = "这是第"+k+"页";
+                expandMove.firstElementChild.innerText = "这是第" + k + "页";
             }, 50)
         }
         // 关闭
         v.onmouseleave = function () {
             clearInterval(time);
-            setTimeout(function(){
+            setTimeout(function () {
                 expandMove.classList.remove("expandS");
-            },10)
+            }, 10)
         }
     })
 

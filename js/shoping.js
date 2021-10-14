@@ -1,13 +1,13 @@
 let navLi = document.querySelectorAll("#nav li");
-    // let bannerUl = $$("#banner ul");
-    // 遍历导航栏，给予点击按钮样式
-    navLi.forEach(function (v, i) {
-        navLi[1].classList.add("liHover");
-        v.onclick = function () {
-            $$(".liHover").classList.remove("liHover");
-            navLi[i].classList.add("liHover");
-        }
-    })
+// let bannerUl = $$("#banner ul");
+// 遍历导航栏，给予点击按钮样式
+navLi.forEach(function (v, i) {
+    navLi[1].classList.add("liHover");
+    v.onclick = function () {
+        $$(".liHover").classList.remove("liHover");
+        navLi[i].classList.add("liHover");
+    }
+})
 
 getShopGoods();
 
@@ -47,7 +47,7 @@ function getShopGoods() {
                     <span class="sale-num">${data.num}</span>
                 </div>
             </div>
-            <button>领券购买</button>
+            <button class="btn">领劵购买</button>
         </div>
     </div>
     <div class="right">
@@ -69,8 +69,98 @@ function getShopGoods() {
         </div>
     </div>`;
     });
-    
+
 
     //添加到指定页面位置中
     $$('#shoping').innerHTML = html;
+    
+    let btns = $$("#shoping .btn");
+    btns.onclick = function(){
+        window.location.href = "https://blog.csdn.net/xiaoyuan9527";
+    }    
+    //评分
+    let spanS = document.querySelectorAll("#shoping .right .bottom>div span");
+    spanS.forEach(function (v, k) {
+        //为了方便简单用随机数评分
+        v.innerHTML = (Math.random() * (1 - 0) + 4).toFixed(1);
+    })
+    //随机数劵
+    $$(".coupon-info").innerHTML = Math.ceil(Math.random() * 8) * 10 + "元劵";
+
 }
+//放大镜效果
+class showImg {
+    constructor() {
+        this.boxObj = this.$$('.img');
+        this.smallObj = this.$$('.small');
+        this.maskObj = this.$$('.mask');
+        this.bigObj = this.$$('.bigImg');
+        this.bImg = this.$$('.bigImgMove');
+
+        // 给small绑定鼠标移入,移出事件
+        this.smallObj.addEventListener('mouseenter', this.enterFn.bind(this));
+        this.smallObj.addEventListener('mouseleave', this.leaveFn.bind(this));
+
+        // 绑定鼠标移动事件
+        this.smallObj.addEventListener('mousemove', this.moveFn.bind(this));
+
+    }
+    // 移入
+    enterFn() {
+        // console.log(this);
+        // 1 显示小黄块和大图
+        this.maskObj.style.display = 'block';
+        this.bigObj.style.display = 'block';
+    }
+    // 移出
+    leaveFn() {
+        this.maskObj.style.display = 'none';
+        this.bigObj.style.display = 'none';
+    }
+    // 移动
+    moveFn(event) {
+        // console.log(event);
+        // 1 获取鼠标的实时位置
+        let mx = event.pageX;
+        let my = event.pageY;
+        // 2 获取box的坐标值
+        let boxT = this.boxObj.offsetTop;
+        let boxL = this.boxObj.offsetLeft;
+
+        // 3 计算滑块的坐标
+        let tmpX = mx - boxL - this.maskObj.offsetWidth / 2;
+        let tmpY = my - boxT - this.maskObj.offsetHeight / 2;
+
+        // 3-1 计算最大的坐标
+        let maxL = this.smallObj.offsetWidth - this.maskObj.offsetWidth;
+        let maxT = this.smallObj.offsetHeight - this.maskObj.offsetHeight;
+
+        // 4 判断边界值
+        if (tmpX < 0) tmpX = 0
+        if (tmpY < 0) tmpY = 0;
+
+        // 最大值设置
+        if (tmpX > maxL) tmpX = maxL;
+        if (tmpY > maxT) tmpY = maxT;
+
+        this.maskObj.style.left = tmpX + 'px';
+        this.maskObj.style.top = tmpY + 'px';
+
+        // 计算大图在div中,移动的最大位置
+        let bigL = this.bigObj.offsetWidth - this.bImg.offsetWidth;
+        let bigT = this.bigObj.offsetHeight - this.bImg.offsetHeight;
+
+        // 计算大图的实时位置
+        let tmpBigT = tmpY / maxT * bigT;
+        let tmpBigL = tmpX / maxL * bigL;
+
+        // 实时位置设置给大图
+        this.bImg.style.left = tmpBigL + 'px';
+        this.bImg.style.top = tmpBigT + 'px';
+    }
+
+    $$(ele) {
+        return document.querySelector(ele)
+    }
+}
+new showImg;

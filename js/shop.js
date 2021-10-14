@@ -1,3 +1,16 @@
+let priceNums = document.querySelector(".price");
+    document.querySelector(".getMoney").onclick = function () {
+        if ((priceNums.innerHTML - 0) != 0) {
+            layer.open({
+                type: 1,
+                skin: 'layui-layer-rim', //加上边框
+                area: ['260px', '350px'], //宽高
+                content: '<h3>请扫描二维码付款</h3><br><img src="./images/个人博客.png" alt="">'
+            });
+        }
+
+    }
+
 class Carts {
     constructor() {
         this.getCartGoods();
@@ -64,7 +77,6 @@ class Carts {
         // 获取id
         let goodsId = trObj.getAttribute('goods-id');
         this.modLocal(goodsId, num)
-
     }
 
     totalNP(oneObj = "") {
@@ -84,11 +96,11 @@ class Carts {
                 // console.log(price);
                 totaNum += num;
                 totaPrice += price;
-                // console.log(totaNum,totaPrice);
+                console.log(totaNum,totaPrice);
             }
         })
         //将得到的数给予相对应的位置
-        this.$$(".num").innerHTML = totaNum;
+        this.$$(".allnum").innerHTML = totaNum;
         this.$$(".price").innerHTML = totaPrice.toFixed(2);
     }
 
