@@ -11,6 +11,7 @@ window.onload = function () {
             navLi[i].classList.add("liHover");
         }
     })
+    
 
     // 轮播
     let banner = $$("#banner .banner");
@@ -142,7 +143,6 @@ window.onload = function () {
                                     addCart(v.id, v.name, v.src, v.price, 1);
                                     //再次取得num,追加到页面
                                     modLocal();
-
                                 }
                             })
                         })
